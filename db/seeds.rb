@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
 
 # def make_seeds
 #     make_cities
@@ -62,3 +63,5 @@
 # end
 
 # make_seeds
+=======
+>>>>>>> 8473b53aef6d52b16899b36e8941d8590c0b7459
