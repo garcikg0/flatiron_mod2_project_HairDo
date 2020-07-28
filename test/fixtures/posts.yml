@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyString
+  stylist_id: 1
+  stylist: one
+
+two:
+  title: MyString
+  body: MyString
+  stylist_id: 1
+  stylist: two

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  description: MyString
+  stylist_id: 1
+  client_id: 1
+  client: one
+  stylist_belongs_to: MyString
+
+two:
+  rating: 1
+  description: MyString
+  stylist_id: 1
+  client_id: 1
+  client: two
+  stylist_belongs_to: MyString
