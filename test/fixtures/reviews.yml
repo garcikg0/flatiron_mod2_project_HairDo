@@ -6,7 +6,7 @@ one:
   stylist_id: 1
   client_id: 1
   client: one
-  stylist_belongs_to: MyString
+  stylist: one
 
 two:
   rating: 1
@@ -14,4 +14,4 @@ two:
   stylist_id: 1
   client_id: 1
   client: two
-  stylist_belongs_to: MyString
+  stylist: two

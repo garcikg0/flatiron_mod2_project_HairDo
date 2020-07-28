@@ -6,7 +6,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.integer :stylist_id
       t.integer :client_id
       t.belongs_to :client, null: false, foreign_key: true
-      t.string :stylist_belongs_to
+      t.belongs_to :stylist, null: false, foreign_key: true
 
       t.timestamps
     end
