@@ -10,17 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 0) do
-=======
 ActiveRecord::Schema.define(version: 2020_07_28_195143) do
->>>>>>> b05c39971c6a1ec7b1a3e1952da17e49b52fa40e
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
   create_table "appointments", force: :cascade do |t|
     t.date "date"
     t.date "time"
@@ -83,5 +77,4 @@ ActiveRecord::Schema.define(version: 2020_07_28_195143) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
->>>>>>> b05c39971c6a1ec7b1a3e1952da17e49b52fa40e
 end

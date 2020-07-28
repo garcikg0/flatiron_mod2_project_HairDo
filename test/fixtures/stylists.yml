@@ -1,22 +1,5 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-<<<<<<< HEAD
-one:
-  name: MyString
-  bio: MyString
-  years_of_experience: 1
-  licenses: MyString
-  city_id: 1
-  neighborhood_id: 1
-
-two:
-  name: MyString
-  bio: MyString
-  years_of_experience: 1
-  licenses: MyString
-  city_id: 1
-  neighborhood_id: 1
-=======
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
@@ -26,4 +9,3 @@ one: {}
 #
 two: {}
 # column: value
->>>>>>> b05c39971c6a1ec7b1a3e1952da17e49b52fa40e
