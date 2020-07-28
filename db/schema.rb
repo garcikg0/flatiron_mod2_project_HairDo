@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_195143) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.integer "stylist"
+    t.integer "stylist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 2020_07_28_195143) do
 
   create_table "stylists", force: :cascade do |t|
     t.string "name"
-    t.string "bio"
     t.integer "age"
     t.integer "years_of_practice"
+    t.string "bio"
     t.string "licenses"
     t.integer "city_id"
     t.integer "neighborhood_id"
