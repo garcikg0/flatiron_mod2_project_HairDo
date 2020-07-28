@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-07-27
+  time: 2020-07-27
+  status: MyString
+  client_id: 1
+  stylist_id: 1
+  city_id: 1
+  neighborhood_id: 1
+  client: one
+  stylist: one
+
+two:
+  date: 2020-07-27
+  time: 2020-07-27
+  status: MyString
+  client_id: 1
+  stylist_id: 1
+  city_id: 1
+  neighborhood_id: 1
+  client: two
+  stylist: two
