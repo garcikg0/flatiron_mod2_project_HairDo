@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get "/"
   resources :neighborhoods
   resources :posts
   resources :reviews
