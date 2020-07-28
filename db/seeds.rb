@@ -56,5 +56,6 @@ puts "injecting new seeds"
     Review.create(rating: 5, description: "Paulette is so kind and knows how to make me look just right. We've resolved our differences after I unknowingly slept with the UPS man. I hope their first date goes well!", client_id: Client.third.id, stylist_id: Stylist.last.id)
     Review.create(rating: 5, description: "Mary's haircut resparked things between my wife, Sharon, and I. The kids said my haircut is lit!", client_id: Client.fourth.id, stylist_id: Stylist.second.id)
 # end
+
 # make_seeds
 puts "all done"
