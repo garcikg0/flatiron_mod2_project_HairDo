@@ -3,7 +3,6 @@ class CreateNeighborhoods < ActiveRecord::Migration[6.0]
     create_table :neighborhoods do |t|
       t.string :name
       t.integer :city_id
-
       t.timestamps
     end
   end
