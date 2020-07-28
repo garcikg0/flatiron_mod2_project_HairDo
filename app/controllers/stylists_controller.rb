@@ -8,11 +8,11 @@ class StylistsController < ApplicationController
         @stylist = Stylist.find(params[:id])
     end
 
-    def new 
+    def new
         @stylist = Stylist.new
     end
 
-    def create 
+    def create
         stylist = Stylist.create(stylist_params)
         redirect_to stylist
     end
