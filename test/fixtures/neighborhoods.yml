@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  zipcodes: 1
-  city_id: 1
+  city: one
 
 two:
   name: MyString
-  zipcodes: 1
-  city_id: 1
+  city: two

@@ -1,4 +1,4 @@
 class Neighborhood < ApplicationRecord
-    has_many :cities
-    has_many :stylists, through: :cities
+  belongs_to :city
+  has_many :stylists, through: :city
 end

@@ -3,11 +3,7 @@
 one:
   city: MyString
   state: MyString
-  stylist: one
-  neighborhood: one
 
 two:
   city: MyString
   state: MyString
-  stylist: two
-  neighborhood: two

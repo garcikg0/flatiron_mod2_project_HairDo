@@ -14,7 +14,11 @@
 #     make_reviews
 #     p "Seeding Done!"
 # end
-
+City.destroy_all
+Neighborhood.destroy_all
+Client.destroy_all
+Stylist.destroy_all
+Review.destroy_all
 # def make_cities
     City.create(city: "New York City", state: "NY")
 # end
@@ -49,10 +53,10 @@
 # end
 
 # def make_stylists
-    Stylist.create(name: "Marie Robinson", bio: "Considered by many as the best stylist in NYC, Marie Robinson owes her long list of A-list patrons to her unmatched talent and warm personality.", years_of_practice: 15, licenses: "NYSDOS Natural Hair Styling License", city_id: 1, neighborhood_id: 1)
-    Stylist.create(name: "Mary Lee", bio: "Experienced hairstylist for celebreties on tour, Mary returned to her roots in NYC to continue pushing the envelope with innovative techniques that will turn heads in the streets.", years_of_practice: 13, licenses: "NYSDOS Natural Hair Styling License", city_id: 1, neighborhood_id: 2)
-    Stylist.create(name: "Drew Calloway", bio: "Raised in the South, Drew relocated to NYC to take his techniques and clients to the next level.", years_of_practice: 10, licenses: "NYSDOS Natural Hair Styling License", city_id: 1, neighborhood_id: 3)
-    Stylist.create(name: "Paulette Bonafonte", bio: "Don't let her sometimes shy exterior fool you - Paulette's spunky personality and mastery of hair will give you the look you always wanted. Sometimes wears tight and short clothes for her crush, the UPS guy.", years_of_practice: 18, licenses: "NYSDOS Natural Hair Styling License", city_id: 1, neighborhood_id: 4)
+    Stylist.create(name: "Marie Robinson", bio: "Considered by many as the best stylist in NYC, Marie Robinson owes her long list of A-list patrons to her unmatched talent and warm personality.", years_of_practice: 15, licenses: "NYSDOS Natural Hair Styling License", city_id: City.first.id, neighborhood_id: Neighborhood.first.id)
+    Stylist.create(name: "Mary Lee", bio: "Experienced hairstylist for celebreties on tour, Mary returned to her roots in NYC to continue pushing the envelope with innovative techniques that will turn heads in the streets.", years_of_practice: 13, licenses: "NYSDOS Natural Hair Styling License", city_id: City.first.id, neighborhood_id: Neighborhood.second.id)
+    Stylist.create(name: "Drew Calloway", bio: "Raised in the South, Drew relocated to NYC to take his techniques and clients to the next level.", years_of_practice: 10, licenses: "NYSDOS Natural Hair Styling License", city_id: City.first.id, neighborhood_id: Neighborhood.third.id)
+    Stylist.create(name: "Paulette Bonafonte", bio: "Don't let her sometimes shy exterior fool you - Paulette's spunky personality and mastery of hair will give you the look you always wanted. Sometimes wears tight and short clothes for her crush, the UPS guy.", years_of_practice: 18, licenses: "NYSDOS Natural Hair Styling License", city_id: City.first.id, neighborhood_id: Neighborhood.fourth.id)
 # end
 
 # def make_reviews

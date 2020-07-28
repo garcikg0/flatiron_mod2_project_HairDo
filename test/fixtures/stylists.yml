@@ -2,14 +2,16 @@
 
 one:
   name: MyString
-  years_of_practice: 1
+  bio: MyString
+  years_of_experience: 1
   licenses: MyString
   city_id: 1
   neighborhood_id: 1
 
 two:
   name: MyString
-  years_of_practice: 1
+  bio: MyString
+  years_of_experience: 1
   licenses: MyString
   city_id: 1
   neighborhood_id: 1
