@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2020_07_28_131544) do
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string "name"
-    t.integer "zipcodes"
     t.integer "city_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -77,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_131544) do
 
   create_table "stylists", force: :cascade do |t|
     t.string "name"
+    t.string "bio"
     t.integer "years_of_practice"
     t.string "licenses"
     t.integer "city_id"
