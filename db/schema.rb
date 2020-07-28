@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_131544) do
+ActiveRecord::Schema.define(version: 2020_07_28_195143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,25 +19,19 @@ ActiveRecord::Schema.define(version: 2020_07_28_131544) do
     t.date "date"
     t.date "time"
     t.string "status"
+    t.integer "client_id"
+    t.integer "stylist_id"
     t.integer "city_id"
     t.integer "neighborhood_id"
-    t.bigint "client_id", null: false
-    t.bigint "stylist_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["client_id"], name: "index_appointments_on_client_id"
-    t.index ["stylist_id"], name: "index_appointments_on_stylist_id"
   end
 
   create_table "cities", force: :cascade do |t|
-    t.string "city"
+    t.string "name"
     t.string "state"
-    t.bigint "stylist_id", null: false
-    t.bigint "neighborhood_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["neighborhood_id"], name: "index_cities_on_neighborhood_id"
-    t.index ["stylist_id"], name: "index_cities_on_stylist_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -49,7 +43,6 @@ ActiveRecord::Schema.define(version: 2020_07_28_131544) do
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string "name"
-    t.integer "zipcodes"
     t.integer "city_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -58,25 +51,24 @@ ActiveRecord::Schema.define(version: 2020_07_28_131544) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.bigint "stylist_id", null: false
+    t.integer "stylist"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["stylist_id"], name: "index_posts_on_stylist_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "description"
-    t.bigint "client_id", null: false
-    t.bigint "stylist_id", null: false
+    t.integer "stylist_id"
+    t.integer "client_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["client_id"], name: "index_reviews_on_client_id"
-    t.index ["stylist_id"], name: "index_reviews_on_stylist_id"
   end
 
   create_table "stylists", force: :cascade do |t|
     t.string "name"
+    t.string "bio"
+    t.integer "age"
     t.integer "years_of_practice"
     t.string "licenses"
     t.integer "city_id"
@@ -85,11 +77,4 @@ ActiveRecord::Schema.define(version: 2020_07_28_131544) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "appointments", "clients"
-  add_foreign_key "appointments", "stylists"
-  add_foreign_key "cities", "neighborhoods"
-  add_foreign_key "cities", "stylists"
-  add_foreign_key "posts", "stylists"
-  add_foreign_key "reviews", "clients"
-  add_foreign_key "reviews", "stylists"
 end
