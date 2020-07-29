@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # get "/"
+  root 'pages#home'
   resources :neighborhoods
   resources :posts
   resources :reviews
