@@ -1,3 +1,16 @@
+<h1>Edit Profile</h1>
+
+
+<% if @errors %>
+  <p style="color:red;">The following errors prevented the user from being created</p>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><p style="color:red"><%= error %></p></li>
+  <% end %>
+</ul>
+<% end %>
+
+
 <%= form_with model: @client do |f| %>
     <%= f.label :name %><br>
     <%= f.text_field :name %>

@@ -26,12 +26,22 @@ class ClientsController < ApplicationController
 
     def edit
       @client = Client.find(params[:id])
+      @errors = flash[:errors]
     end
 
     def update
       client = Client.find(params[:id])
-      client.update(client_params)
-      redirect_to client_path(client)
+      if client.update(client_params)
+        flash[:notice] = "Profile was successfully updated."
+        redirect_to client_path(client)
+      else
+        flash[:errors] = client.errors.full_messages
+        redirect_to edit_client_path
+      end
+    end
+
+    def destroy
+
     end
 
     private
