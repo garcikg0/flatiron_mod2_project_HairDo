@@ -9,11 +9,35 @@ class ReviewsController < ApplicationController
 
     def new 
         @review = Review.new
+        @errors = flash[:errors]
     end
 
     def create
         review = Review.create(review_params)
-        redirect_to review
+        if review.valid?
+            flash[:notice] = "Thank you for submitting your review!"
+            redirect_to review
+        else
+            flash[:errors] = review.errors.full_messages
+            redirect_to new_review_path
+        end
+    end
+
+    def edit
+        @review = Review.find(params[:id])
+        @errors = flash[:errors]
+        
+    end
+
+    def update
+        review = Review.find(params[:id])
+        if review.update(review_params)
+            flash[:notice] = "Review was sucessfully updated!"
+            redirect_to review_path(review)
+        else
+            flash[:errors] = review.errors.full_messages
+            redirect_to edit_review_path
+        end
     end
 
     private

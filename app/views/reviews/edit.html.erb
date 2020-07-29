@@ -1,0 +1,27 @@
+<h2>Edit Review Form</h2>
+<hr>
+<% if @errors %>
+    <p style="color:red;">The following errors prevented the user from being created</p>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><p style="color:red"><%= error %></p></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_with model: @review do |f| %>
+<%= f.label :rating %><br>
+<%= f.number_field :rating %>
+<br>
+<%= f.label :description %><br>
+<%= f.text_area :description %>
+<br>
+<%= f.label :stylist_id %><br>
+<%= f.collection_select :stylist_id, Stylist.all, :id, :name %>
+<br>
+<%= f.label :client_id %><br>
+<%= f.collection_select :client_id, Client.all, :id, :name %><br>
+<br>
+<%= f.submit "Edit Review" %>
+<% end %>
+
