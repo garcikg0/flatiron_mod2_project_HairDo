@@ -5,7 +5,7 @@ class StylistsController < ApplicationController
     end
 
     def show
-    
+
         @stylist = Stylist.find(params[:id])
     end
 
@@ -16,6 +16,16 @@ class StylistsController < ApplicationController
     def create
         stylist = Stylist.create(stylist_params)
         redirect_to stylist
+    end
+
+    def edit
+      @stylist = Stylist.find(params[:id])
+    end
+
+    def update
+      stylist = Stylist.find(params[:id])
+      stylist.update(stylist_params)
+      redirect_to stylist_path(client)
     end
 
     private
