@@ -1,2 +1,26 @@
-<h2>Sign up</h2>
+<h2>Stylist Sign up</h2>
 <hr>
+<%= form_for @stylist do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+    <br>
+    <%= f.label :years_of_practice %>
+    <%= f.number_field :age %>
+    <br>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+    <br>
+    <%= f.label :licenses %>
+    <%= f.text_field :licenses %>
+    <br>
+    <%= f.label :city_id %>
+    <%= f.collection_select :city_id, City.all, :id, :name %>
+    <br>
+    <%= f.label :neighborhood_id %>
+    <%= f.collection_select(:neighborhood_id, Neighborhood.all, :id, :name) %>
+    <br>
+    <%= f.submit %>
+    <% end %>
