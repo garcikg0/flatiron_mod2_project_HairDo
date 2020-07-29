@@ -1,7 +1,8 @@
 <h1><%= @stylist.name %></h1>
 <hr>
 <br>
-<p>Bio: <%= @stylist.bio %></p>
+<p>Bio:
+  <%= @stylist.bio %></p>
 <br>
 <p>Age:<%= @stylist.age %></p>
 <br>
@@ -10,36 +11,37 @@
 <p>Licenses:<%= @stylist.licenses %></p>
 <br>
 
-
-
-
 <h2>Reviews</h2>
 
 <% if @stylist.reviews.count >= 1 %>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Rating</th>
-    <th>Review</th>
-  </tr>
-  <% @stylist.reviews.each do |review| %>
-  <tr>
-<td><%= review.client.name %></td>
-<td><%= review.rating %>/5</td>
-<td><%= review.description %></td>
-  </tr>
-</table>
-<% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <% @stylist.reviews.each do |review| %>
+        <tr>
+          <td><%= review.client.name %></td>
+          <td><%= review.rating %>/5</td>
+          <td><%= review.description %></td>
+        </tr>
+      </table>
+    <% end %>
+  </tbody>
 <% else %>
-<p> Be the first to leave a review!!</p>
+  <p>
+    Be the first to leave a review!!</p>
 <% end %>
-
-
-
-
 
 <hr>
 <%= link_to "Index Page", stylists_path %>
 
-career <br>
+career
+<br>
 more info
