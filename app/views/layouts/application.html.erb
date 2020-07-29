@@ -14,4 +14,13 @@
     <%= render 'layouts/navigation' %>
     <%= flash[:notice] %>
     <%= yield %>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white">
+      <div class="container text-center">
+        <small>  <%= link_to "Index Page", stylists_path %>
+          <%= link_to "Become a Stylist",  "/stylists/new" %>
+          <%= link_to "All Clients", "/clients" %>
+          <%= link_to "Stylist", "/stylists" %>
+        </small>
+      </div>
+    </footer>
   </body>
