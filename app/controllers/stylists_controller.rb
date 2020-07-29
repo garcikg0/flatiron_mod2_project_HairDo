@@ -5,7 +5,7 @@ class StylistsController < ApplicationController
     end
 
     def show
-        @clients = Client.all
+    
         @stylist = Stylist.find(params[:id])
     end
 
