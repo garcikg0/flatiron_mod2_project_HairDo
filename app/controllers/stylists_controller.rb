@@ -25,7 +25,7 @@ class StylistsController < ApplicationController
     def update
       stylist = Stylist.find(params[:id])
       stylist.update(stylist_params)
-      redirect_to stylist_path(client)
+      redirect_to stylist
     end
 
     private

@@ -10,11 +10,18 @@ class ClientsController < ApplicationController
 
     def new
         @client = Client.new
+        @errors = flash[:errors]
     end
 
     def create
         client = Client.create(client_params)
-        redirect_to client
+        if client.valid?
+          flash[:notice] = "Welcome to your homepage"
+          redirect_to client
+        else
+          flash[:errors] = client.errors.full_messages
+          redirect_to new_client_path
+        end
     end
 
     def edit
