@@ -10,7 +10,7 @@
 <br>
 <p>Licenses:<%= @stylist.licenses %></p>
 <br>
-<p>Services the following Neighborhoods:<%= @stylist.city.neighborhood.name %>
+<p>Services the following Neighborhoods:<%= @stylist.city.neighborhoods.find_by( id: @stylist.neighborhood_id).name %></p>
 
 <h2>Reviews</h2>
 
