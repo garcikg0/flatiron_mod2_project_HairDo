@@ -6,4 +6,5 @@ class Stylist < ApplicationRecord
   has_many :posts
   belongs_to :city
   delegate :neighborhood, :to => :city
+  # has_many :neighborhoods, through: :city
 end

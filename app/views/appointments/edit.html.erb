@@ -1,4 +1,4 @@
-<h2>New Appointment Form</h2>
+<h2>Edit Appointment Form</h2>
 <hr>
 <% if @errors %>
     <p style="color:red;">The following errors prevented the user from being created</p>
@@ -14,7 +14,7 @@
 <%= f.datetime_field :appt %>
 <br>
 <% f.label :status %><br>
-<% f.text_field :status , value: "Pending" %>
+<% f.text_field :status , value: "Rescheduled" %>
 <br>
 <%= f.label :client_id %><br>
 <%= f.collection_select :client_id, Client.all, :id, :name %>
@@ -28,5 +28,5 @@
 <%= f.label :neighborhood_id %><br>
 <%= f.collection_select :neighborhood_id, Neighborhood.all, :id, :name %><br>
 <br>
-<%= f.submit "Book Appointment" %>
+<%= f.submit "Edit Appointment" %>
 <% end %>

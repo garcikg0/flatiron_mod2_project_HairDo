@@ -1,0 +1,9 @@
+<h1><%= @appointment.client.name%>'s Appointment with <%= @appointment.stylist.name %></h1>
+<hr>
+<br>
+<h3>Appointment Date & Time:</h3><p><%= @appointment.appt %></p>
+<br>
+<h3>Location:</h3><p><%= @appointment.stylist.city.neighborhoods.find_by( id: @appointment.stylist.neighborhood_id).name %></p>
+<br>
+
+<%= link_to "Reschedule Appointment", "/appointments/#{@appointment.id}/edit"%>
