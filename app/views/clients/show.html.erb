@@ -3,3 +3,4 @@
 <p>Age: <%= @client.age %></p>
 
 <%= link_to "Edit Profile", "/clients/#{@client.id}/edit"%>
+<%= button_to "Delete Profile", "/clients/#{@client.id}", method: :delete, data: {confirm: "This action is irreversible. Are you sure?"} %>

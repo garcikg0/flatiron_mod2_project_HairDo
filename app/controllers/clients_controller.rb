@@ -41,7 +41,10 @@ class ClientsController < ApplicationController
     end
 
     def destroy
-
+      @client = Client.find(params[:id])
+      @client.destroy
+      flash[:notice] = "Account was successfully deleted. "
+      redirect_to clients_path
     end
 
     private
