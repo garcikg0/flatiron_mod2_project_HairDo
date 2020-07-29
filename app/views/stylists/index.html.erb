@@ -1,1 +1,15 @@
 <h1>Stylist</h1>
+<hr>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Bio</th>
+  </tr>
+<% @stylists.each do|stylist| %>
+<tr>
+  <td><%= link_to stylist.name, stylist_path(stylist) %></td>
+  <td><%= stylist.bio %></td>
+</tr>
+<% end %>
+</table>

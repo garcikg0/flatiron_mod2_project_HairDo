@@ -9,3 +9,26 @@
 <br>
 <p>Licenses:<%= @stylist.licenses %></p>
 <br>
+
+<h2>Reviews</h2>
+
+
+
+<% if @stylist.reviews.count >= 1 %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rating</th>
+    <th>Review</th>
+  </tr>
+  <% @stylist.reviews.each do |review| %>
+  <tr>
+<td><%= @clients.find_by(id:review.client_id).name %></td>
+<td><%= review.rating %>/5</td>
+<td><%= review.description %></td>
+  </tr>
+</table>
+<% end %>
+<% else %>
+<p> Be the first to leave a review!!</p>
+<% end %>
