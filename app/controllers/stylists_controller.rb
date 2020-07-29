@@ -1,5 +1,9 @@
 class StylistsController < ApplicationController
 
+    def home
+
+    end
+
     def index
         @stylists = Stylist.all
     end
