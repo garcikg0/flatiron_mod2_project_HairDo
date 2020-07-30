@@ -7,7 +7,17 @@
       <p class="lead"></p>
       <hr class="my-4">
       <p>Easiest place to find your next forever hairstylist.</p>
-      <a class="btn btn-light btn-lg" href="#" role="button">Sign Up</a>
+      <a class="btn btn-light btn-lg" href="/clients/new" role="button">Sign Up</a>
     </div>
   </div>
 </div>
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white">
+  <div class="container text-center">
+    <small>  <%= link_to "Index Page", stylists_path, class: "text-white" %>
+      <%= link_to "Become a Stylist",  "/stylists/new", class: "text-white" %>
+      <%= link_to "All Clients", "/clients", class: "text-white" %>
+      <%= link_to "Stylist", "/stylists", class: "text-white" %>
+    </small>
+  </div>
+</footer>
