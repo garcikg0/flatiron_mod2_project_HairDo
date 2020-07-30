@@ -9,7 +9,7 @@
 </ul>
 <% end %>
 
-<%= form_for @appointment do |f| %>
+<%= form_with model: @appointment do |f| %>
 <%= f.label :appt %><br>
 <%= f.datetime_field :appt %>
 <br>
@@ -19,9 +19,8 @@
 <%= f.label :client_id %><br>
 <%= f.collection_select :client_id, Client.all, :id, :name %>
 <br>
-<% f.hidden_field :stylist_id, :value => @stylist.id %>
 <%= f.label :stylist_id %><br>
-<%= f.text_field :stylist_id, value: @stylist.id %>
+<%= f.collection_select :stylist_id, Stylist.all, :id, :name %>
 <br>
 <%= f.label :city_id %><br>
 <%= f.collection_select :city_id, City.all, :id, :name %>
