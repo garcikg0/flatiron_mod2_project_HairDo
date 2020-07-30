@@ -10,7 +10,7 @@
 <br>
 <p>Licenses:<%= @stylist.licenses %></p>
 <br>
-<p>Services the following Neighborhoods:<%= @stylist.city.neighborhoods.find_by( id: @stylist.neighborhood_id).name %></p>
+<p>Services the following Neighborhoods: <%= @stylist.city.neighborhoods.find_by( id: @stylist.neighborhood_id).name %></p>
 
 <h2>Reviews</h2>
 
@@ -36,8 +36,8 @@
   </tbody>
   </table>
 <% else %>
-  <p>
-    Be the first to leave a review!!</p>
-<% end %>
+  <p>Be the first to leave a review!!</p>
 
+<% end %>
+<%= link_to "Leave review", new_review_path, class: 'button' %>
 <%= link_to "Edit Profile", "/stylists/#{@stylist.id}/edit"%>
