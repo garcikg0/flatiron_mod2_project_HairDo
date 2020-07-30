@@ -8,7 +8,7 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.new
         @errors = flash[:errors]
     end
-    
+
     before_action :get_stylist
     def create
         appointment = Appointment.new
@@ -38,6 +38,13 @@ class AppointmentsController < ApplicationController
             redirect_to edit_appointment_path
         end
     end
+
+    # def destroy
+    #   @appointment = Appointment.find(params[:id])
+    #   @appointment.destroy
+    #   flash[:notice] = "Appointment was successfully deleted. "
+    #   redirect_to client_path
+    # end
 
     private
 

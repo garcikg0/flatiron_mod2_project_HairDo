@@ -4,6 +4,7 @@
 <h2>My Appointments</h2>
 <ul>
 
+
 <% @client.appointments.each do |appointment| %>
 <li>
 <%= appointment.stylist.name %> on <%= appointment.appt.strftime("%B %d,%Y at %I:%M %p") %>

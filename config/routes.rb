@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   resources :appointments
   resources :cities
   resources :clients
-  resources :stylists do
-    resources :appointments
-  end
+  resources :stylists 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
