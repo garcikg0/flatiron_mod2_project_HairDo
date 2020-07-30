@@ -7,14 +7,18 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
     end
 
-    def new 
+    def new
         @review = Review.new
         @errors = flash[:errors]
     end
 
+    # before_action :get_stylist
     def create
         review = Review.create(review_params)
+        # review = Review.new
+        # @stylist.review.create(review_params)
         if review.valid?
+            # @stylist.save
             flash[:notice] = "Thank you for submitting your review!"
             redirect_to review
         else
@@ -26,7 +30,7 @@ class ReviewsController < ApplicationController
     def edit
         @review = Review.find(params[:id])
         @errors = flash[:errors]
-        
+
     end
 
     def update
