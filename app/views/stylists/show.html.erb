@@ -10,7 +10,8 @@
 <br>
 <p>Licenses:<%= @stylist.licenses %></p>
 <br>
-<p>Services the following Neighborhoods: <%= @stylist.city.neighborhoods.find_by( id: @stylist.neighborhood_id).name %></p>
+<p>Services the following Neighborhoods:
+  <%= @stylist.city.neighborhoods.find_by( id: @stylist.neighborhood_id).name %></p>
 
 <h2>Reviews</h2>
 
@@ -32,12 +33,11 @@
           <td><%= review.rating %>/5</td>
           <td><%= review.description %></td>
         </tr>
-    <% end %>
-  </tbody>
+      <% end %>
+    </tbody>
   </table>
 <% else %>
   <p>Be the first to leave a review!!</p>
-
 <% end %>
 <%= button_to "Book Appointment", new_stylist_appointment_path(:stylist_id => @stylist.id), :method => "get" %>
 <%= button_to "Leave review", new_review_path, :method => "get" %>

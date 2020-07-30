@@ -12,9 +12,12 @@ class ReviewsController < ApplicationController
         @errors = flash[:errors]
     end
 
+    before_action :get_stylist
     def create
-        review = Review.create(review_params)
+        review = Review.new
+        @stylist.review.create(review_params)
         if review.valid?
+            @stylist.save
             flash[:notice] = "Thank you for submitting your review!"
             redirect_to review
         else

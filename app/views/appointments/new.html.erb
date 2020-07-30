@@ -21,7 +21,7 @@
 <br>
 <% f.hidden_field :stylist_id, :value => @stylist.id %>
 <%= f.label :stylist_id %><br>
-<%= f.text_field :stylist_id, value: @stylist.name %>
+<%= f.text_field :stylist_id, value: @stylist.id %>
 <br>
 <%= f.label :city_id %><br>
 <%= f.collection_select :city_id, City.all, :id, :name %>

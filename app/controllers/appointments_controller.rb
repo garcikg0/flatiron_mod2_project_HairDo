@@ -16,10 +16,10 @@ class AppointmentsController < ApplicationController
         if appointment.valid?
             @appointment.save
             flash[:notice] = "Thank you for scheduling your appointment!"
-            redirect_to appointment
+            redirect_to stylist_appointment
         else
             flash[:errors] = appointment.errors.full_messages
-            redirect_to new_appointment_path
+            redirect_to new_stylist_appointment_path
         end
     end
 
