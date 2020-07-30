@@ -16,7 +16,7 @@ Appointment.destroy_all
 puts "injecting new seeds"
 
 # def make_cities
-    City.create(name: "New York City", state: "NY")
+   City.create(name: "New York City", state: "NY")
 # end
 # def make_neighborhoods
     Neighborhood.create(name: "FiDi", city_id: City.first.id)
