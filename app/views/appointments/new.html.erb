@@ -20,7 +20,7 @@
 <%= f.collection_select :client_id, Client.all, :id, :name %>
 <br>
 <%= f.label :stylist_id %><br>
-<%= f.collection_select :stylist_id, Stylist.all, :id, :name %>
+<%= f.collection_select :stylist_id, :value => @stylist.id %>
 <br>
 <%= f.label :city_id %><br>
 <%= f.collection_select :city_id, City.all, :id, :name %>

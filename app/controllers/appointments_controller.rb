@@ -6,11 +6,13 @@ class AppointmentsController < ApplicationController
 
     def new
         @appointment = Appointment.new
+        @stylist = Stylist.find(params[:stylist_id])
         @errors = flash[:errors]
     end
 
     def create
         appointment = Appointment.create(appt_params)
+        appointment.stylist = Stylist.find(params[:stylist_id])
         if appointment.valid?
             flash[:notice] = "Thank you for scheduling your appointment!"
             redirect_to appointment
