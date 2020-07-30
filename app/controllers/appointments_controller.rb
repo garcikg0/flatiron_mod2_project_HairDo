@@ -8,10 +8,13 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.new
         @errors = flash[:errors]
     end
-
+    
+    before_action :get_stylist
     def create
-        appointment = Appointment.create(appt_params)
+        appointment = Appointment.new
+        @stylist.appointment.create(appt_params)
         if appointment.valid?
+            @appointment.save
             flash[:notice] = "Thank you for scheduling your appointment!"
             redirect_to appointment
         else
@@ -40,5 +43,9 @@ class AppointmentsController < ApplicationController
 
     def appt_params
         params.require(:appointment).permit(:appt, :status, :client_id, :stylist_id, :city_id, :neighborhood_id)
+    end
+
+    def get_stylist
+        @stylist = Stylist.find(params[:stylist_id])
     end
 end
