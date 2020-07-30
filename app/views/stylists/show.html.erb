@@ -39,5 +39,6 @@
   <p>Be the first to leave a review!!</p>
 
 <% end %>
-<%= link_to "Leave review", new_review_path, class: 'button' %>
+<%= button_to "Book Appointment", new_appointment_path, :method => "get" %>
+<%= button_to "Leave review", new_review_path, :method => "get" %>
 <%= link_to "Edit Profile", "/stylists/#{@stylist.id}/edit"%>
