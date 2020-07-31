@@ -13,6 +13,8 @@
 <% end %>
 </ul>
 
-  <%= link_to "Edit Profile", "/clients/#{@client.id}/edit"%>
+
+<a class="btn btn-primary" href=<%= "/clients/#{@client.id}/edit" %> role="button">Edit Profile</a>
+
   <%= button_to "Delete Profile", "/clients/#{@client.id}", method: :delete, data: {confirm: "This action is irreversible. Are you sure?"} %>
 <% end %>
