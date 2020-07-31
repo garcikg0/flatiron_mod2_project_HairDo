@@ -1,44 +1,20 @@
-<h1><%= @stylist.name %></h1>
-<hr>
-<br>
-<p>Bio:
-  <%= @stylist.bio %></p>
-<br>
-<p>Age:<%= @stylist.age %></p>
-<br>
-<p>Years of Practice:<%= @stylist.years_of_practice %></p>
-<br>
-<p>Licenses:<%= @stylist.licenses %></p>
-<br>
-<p>Services the following Neighborhoods:
-  <%= @stylist.city.neighborhoods.find_by( id: @stylist.neighborhood_id).name %></p>
+<div class="" id="card-container">
 
-<h2>Reviews</h2>
 
-<% if @stylist.reviews.count >= 1 %>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Rating</th>
-        <th>Review</th>
-      </tr>
-    </thead>
-
-    <tbody>
-
-      <% @stylist.reviews.each do |review| %>
-        <tr>
-          <td><%= review.client.name %></td>
-          <td><%= review.rating %>/5</td>
-          <td><%= review.description %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <p>Be the first to leave a review!!</p>
-<% end %>
-<%= button_to "Book Appointment", new_appointment_path, :method => "get" %>
-<%= button_to "Leave review", new_review_path, :method => "get" %>
-<%= link_to "Edit Profile", "/stylists/#{@stylist.id}/edit"%>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://randomuser.me/api/portraits/women/<%= rand(1...100) %>.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= @stylist.name %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+</div>

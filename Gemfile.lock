@@ -103,6 +103,7 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
+    prettyusers (0.0.3.1)
     public_suffix (4.0.5)
     puma (4.3.5)
       nio4r (~> 2.0)
@@ -138,6 +139,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
     rake (13.0.1)
+    random_users (1.0.2)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -206,8 +208,10 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
+  prettyusers
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)
+  random_users
   sass-rails (>= 6)
   selenium-webdriver
   spring

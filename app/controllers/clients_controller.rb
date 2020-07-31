@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+    before_action :require_client, except: [:show, :index]
 
     def index
         @clients = Client.all
@@ -16,6 +17,7 @@ class ClientsController < ApplicationController
     def create
         client = Client.create(client_params)
         if client.valid?
+          session[:client_id] = client.id
           flash[:notice] = "Welcome to your homepage"
           redirect_to client
         else

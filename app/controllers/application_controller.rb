@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_client, :logged_in?, :current_stylist
+  helper_method :current_client, :logged_in?, :require_client, :current_stylist
 
  def current_client
    @current_client ||= Client.find(session[:client_id]) if session[:client_id]

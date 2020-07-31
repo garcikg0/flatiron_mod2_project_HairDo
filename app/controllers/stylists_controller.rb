@@ -1,6 +1,9 @@
 class StylistsController < ApplicationController
     include StylistsHelper
     before_action :set_current_stylist, only: [:show]
+  before_action :require_client, except: [:show, :index, :home]
+
+
 
     def home
 
@@ -32,6 +35,7 @@ class StylistsController < ApplicationController
       stylist.update(stylist_params)
       redirect_to stylist
     end
+
 
     private
 
