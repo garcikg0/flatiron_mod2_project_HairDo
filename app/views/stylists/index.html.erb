@@ -7,13 +7,13 @@
     <div class="card shadow mb-5 bg-white rounded">
       <div class="row no-gutters">
         <div class="col-auto">
-          <img src="//placehold.it/200" class="img-fluid" alt="">
+          <img src="https://randomuser.me/api/portraits/women/<%= rand(1...100) %>.jpg" class="img-fluid" alt="">
         </div>
         <div class="col">
           <div class="card-block px-2">
             <h4 class="card-title"><%= link_to stylist.name, stylist_path(stylist) %></h4>
             <p class="card-text"><%= stylist.bio %></p>
-            <a href="" class="btn btn-primary">Schedule Appointment</a>
+            <!-- <a href="" class="btn btn-primary">Schedule Appointment</a> -->
           </div>
         </div>
       </div>

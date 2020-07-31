@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+    before_action :require_client, except: [:show, :index]
 
     def index
         @clients = Client.all

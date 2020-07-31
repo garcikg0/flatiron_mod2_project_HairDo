@@ -1,4 +1,7 @@
 class StylistsController < ApplicationController
+  before_action :require_client, except: [:show, :index, :home]
+
+
 
     def home
 
@@ -9,7 +12,7 @@ class StylistsController < ApplicationController
     end
 
     def show
-
+        
         @stylist = Stylist.find(params[:id])
     end
 
@@ -31,6 +34,7 @@ class StylistsController < ApplicationController
       stylist.update(stylist_params)
       redirect_to stylist
     end
+
 
     private
 
