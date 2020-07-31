@@ -1,10 +1,11 @@
 <h1>Clients Home Page</h1>
 <p>Name: <%= @client.name %></p>
 <p>Age: <%= @client.age %></p>
+
+<% if logged_in? && current_client == @client %>
+
 <h2>My Appointments</h2>
 <ul>
-
-
 <% @client.appointments.each do |appointment| %>
 <li>
 <%= appointment.stylist.name %> on <%= appointment.appt.strftime("%B %d,%Y at %I:%M %p") %>
@@ -12,5 +13,6 @@
 <% end %>
 </ul>
 
-<%= link_to "Edit Profile", "/clients/#{@client.id}/edit"%>
-<%= button_to "Delete Profile", "/clients/#{@client.id}", method: :delete, data: {confirm: "This action is irreversible. Are you sure?"} %>
+  <%= link_to "Edit Profile", "/clients/#{@client.id}/edit"%>
+  <%= button_to "Delete Profile", "/clients/#{@client.id}", method: :delete, data: {confirm: "This action is irreversible. Are you sure?"} %>
+<% end %>

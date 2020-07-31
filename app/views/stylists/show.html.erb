@@ -41,4 +41,7 @@
 <% end %>
 <%= button_to "Book Appointment", new_appointment_path, :method => "get" %>
 <%= button_to "Leave review", new_review_path, :method => "get" %>
+
+<% if logged_in? && current_client == @client %>
 <%= link_to "Edit Profile", "/stylists/#{@stylist.id}/edit"%>
+<% end %>

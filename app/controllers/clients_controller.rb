@@ -16,6 +16,7 @@ class ClientsController < ApplicationController
     def create
         client = Client.create(client_params)
         if client.valid?
+          session[:client_id] = client.id
           flash[:notice] = "Welcome to your homepage"
           redirect_to client
         else
