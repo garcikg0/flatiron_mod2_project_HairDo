@@ -10,7 +10,7 @@
         <%= link_to "Stylists", stylists_path, class: "nav-link" %>
       </li>
 
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Appointments
         </a>
@@ -20,7 +20,7 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
-      </li>
+      </li> -->
       <% if logged_in? %>
       <li class="nav-item">
         <%= link_to current_client.name.capitalize, "/clients/#{session[:client_id]}", class: "nav-link" %>

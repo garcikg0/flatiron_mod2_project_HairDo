@@ -1,20 +1,112 @@
-<div class="" id="card-container">
-
-
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://randomuser.me/api/portraits/women/<%= rand(1...100) %>.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><%= @stylist.name %></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="col-md-4 center" id="card-3-tr">
+  <div class="card profile-card-3">
+    <div class="background-block">
+      <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="profile-sample1" class="background"/>
+    </div>
+    <div class="profile-thumb-block">
+      <img src="https://randomuser.me/api/portraits/women/<%= rand(1...100) %>.jpg" alt="profile-image" class="profile"/>
+    </div>
+    <div class="card-content">
+      <h2><%= @stylist.name %>
+        <small>Stylist</small>
+      </h2>
+      <div class="icon-block">
+        <a href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </div>
+      <div class="">
+        <%= mail_to "MarieRobinson@gmail.com", "Contact Me" %>
+      </div>
+      <div class="">
+        <%= link_to "Book Appointment", new_appointment_path, :method => "get" %>
+      </div>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
+
+</div>
+
+<div class="container card shadow mb-5 bg-white rounded mt-4">
+  <div class="card-header">
+    Quote
+  </div>
   <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <blockquote class="blockquote mb-0">
+      <p><%= @stylist.bio %></p>
+      <footer class="blockquote-footer">
+        <cite title="Source Title">Stylist Times</cite>
+      </footer>
+    </blockquote>
   </div>
 </div>
+
+<% if @stylist.reviews.count >= 1 %>
+<% @stylist.reviews.each do |review| %>
+<div class="container card shadow mb-5 bg-white rounded mt-4">
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">
+          <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+          <p class="text-secondary text-center"><%= review.created_at.strftime("%B %d,%Y at %I:%M %p") %></p>
+        </div>
+        <div class="col-md-10">
+          <p>
+            <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html">
+              <strong><%= review.client.name %></strong>
+            </a>
+            <span class="float-right">
+              <i class="text-warning fa fa-star"></i>
+            </span>
+            <span class="float-right">
+              <i class="text-warning fa fa-star"></i>
+            </span>
+            <span class="float-right">
+              <i class="text-warning fa fa-star"></i>
+            </span>
+            <span class="float-right">
+              <i class="text-warning fa fa-star"></i>
+            </span>
+
+          </p>
+          <div class="clearfix"></div>
+          <p><%= review.description %></p>
+          <p>
+            <a class="float-right btn text-white btn-danger">
+              <i class="fa fa-heart"></i>
+              Like</a>
+          </p>
+          <% end %>
+          <% else %>
+          <div class="container card text-center">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text">So lonely. Be the first to leave a review!!</p>
+      <a href="/reviews/new" class="btn btn-primary">Leave a review</a>
+    </div>
+    <div class="card-footer text-muted">
+
+    </div>
+  </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<% if logged_in? && current_client == @client %>
+<%= link_to "Edit Profile", "/stylists/#{@stylist.id}/edit"%>
+<% end %>

@@ -6,9 +6,13 @@
       <h1 class="display-4">Welcome to Hairdo!</h1>
       <p class="lead"></p>
       <hr class="my-4">
-      <p>Easiest place to find your next forever hairstylist.</p>
+      <% if !logged_in? %>
       <a class="btn btn-light btn-lg" href="/clients/new" role="button">Sign Up</a>
+      <% end %>
+      <div id="easier-place">
+      </div>
     </div>
+    <p class="text-center">Easiest place to find your next forever hairstylist.</p>
   </div>
 </div>
 

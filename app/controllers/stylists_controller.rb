@@ -1,7 +1,7 @@
 class StylistsController < ApplicationController
     include StylistsHelper
     before_action :set_current_stylist, only: [:show]
-  before_action :require_client, except: [:show, :index, :home]
+    before_action :require_client, except: [:show, :index, :home]
 
 
 
@@ -42,7 +42,7 @@ class StylistsController < ApplicationController
     def stylist_params
         params.require(:stylist).permit(:name, :bio, :age, :years_of_experience, :licenses, :city_id, :neighborhood_id)
     end
-    
+
     # def set_current_stylist
     #     # current_stylist = []
     #     @current_stylist = Stylist.find(params[:id])
