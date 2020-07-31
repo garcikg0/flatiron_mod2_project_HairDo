@@ -1,4 +1,7 @@
 class AppointmentsController < ApplicationController
+  include AppointmentsHelper
+  before_action :find_current_stylist, only: [:new, :create]
+  before_action :find_current_client
 
     def show
         @appointment = Appointment.find(params[:id])

@@ -47,7 +47,22 @@
 </div>
 
 <% if @stylist.reviews.count >= 1 %>
+<table>
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
 <% @stylist.reviews.each do |review| %>
+<tr>
+  <td>
+
+
+
+  </td>
+</tr>
 <div class="container card shadow mb-5 bg-white rounded mt-4">
 
   <div class="card">
@@ -84,6 +99,10 @@
               Like</a>
           </p>
           <% end %>
+
+
+
+
           <% else %>
           <div class="container card text-center">
     <div class="card-header">
@@ -106,6 +125,9 @@
   </div>
 </div>
 
+<% if @stylist.reviews.count >= 1 %>
+  <a class="btn btn-outline-info" href="/reviews/new" role="button">Leave a review</a>
+<% end %>
 
 <% if logged_in? && current_client == @client %>
 <%= link_to "Edit Profile", "/stylists/#{@stylist.id}/edit"%>
