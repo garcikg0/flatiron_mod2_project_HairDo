@@ -9,7 +9,7 @@ class AppointmentsController < ApplicationController
         @errors = flash[:errors]
     end
 
-    # before_action :get_stylist
+    # before_action :set_current_stylist
     def create
         appointment = Appointment.create(appt_params)
         # appointment = Appointment.new
@@ -52,6 +52,10 @@ class AppointmentsController < ApplicationController
     def appt_params
         params.require(:appointment).permit(:appt, :status, :client_id, :stylist_id, :city_id, :neighborhood_id)
     end
+
+    # def set_current_stylist
+    #     @current_user = current_stylist
+    # end
 
     # def get_stylist
     #     @stylist = Stylist.find(params[:stylist_id])

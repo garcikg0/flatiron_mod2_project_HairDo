@@ -24,7 +24,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <% if session[:client_id] %>
+      <% if logged_in? %>
       <li class="nav-item">
         <%= link_to 'Log out', logout_path, class: "nav-link", method: :delete %>
       </li>
